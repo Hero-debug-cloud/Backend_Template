@@ -1,8 +1,9 @@
 {
-  "name": "backend",
+  "name": "@start_template/backend",
   "version": "1.0.0",
-  "description": "",
+  "description": "this is the template backend folder for your project",
   "main": "index.js",
+  "bin":"./bin/cli.js",
   "scripts": {
     "devStart": "nodemon index.ts",
     "start": "node index.ts",
