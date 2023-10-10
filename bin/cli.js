@@ -1,33 +1,30 @@
 #!/usr/bin/env node
 
-const {exeSync}=require("child_process");
+const { exeSync } = require("child_process");
 
-const runCommand=command=>{
-    try{
-        exeSync(`${command}`,{stdio:"inhert"});
-    }catch(e){
-        console.error(`Failed to execute ${command}`,e);
-        return false;
-    }
-    return true;
-}
+const runCommand = (command) => {
+  try {
+    exeSync(`${command}`, { stdio: "inhert" });
+  } catch (e) {
+    console.error(`Failed to execute ${command}`, e);
+    return false;
+  }
+  return true;
+};
 
-const repoName=process.argv[2];
-const gitcheckoutCommand = `git clone --depth 1 https://github.com/Hero-debug-cloud/Backend_Template.git ${repoName}`;
+const repoName = process.argv[2];
+const gitcheckoutCommand = `git clone https://github.com/Hero-debug-cloud/Backend_Template.git ${repoName}`;
 const installDepsCommand = `cd ${repoName} && npm install`;
 
 console.log(`Clonning the repository with name ${repoName}`);
 
-const checkOut=runCommand(gitcheckoutCommand);
-if(!checkOut) process.exit(-1);
-
+const checkOut = runCommand(gitcheckoutCommand);
+if (!checkOut) process.exit(-1);
 
 console.log(`Installing dependencies for ${repoName}`);
-const isntalledDeps=runCommand(installDepsCommand);
+const isntalledDeps = runCommand(installDepsCommand);
 
-if(!isntalledDeps) process.exit(-1);
+if (!isntalledDeps) process.exit(-1);
 
 console.log("Congratulation! , Follow the following commands to start");
 console.log(`cd ${repoName} && npm start`);
-
-
