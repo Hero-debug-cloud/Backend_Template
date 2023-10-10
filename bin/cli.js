@@ -27,4 +27,4 @@ const isntalledDeps = runCommand(installDepsCommand);
 if (!isntalledDeps) process.exit(-1);
 
 console.log("Congratulation! , Follow the following commands to start");
-console.log(`cd ${repoName} && npm start`);
+console.log(`cd ${repoName} && npm run devStart`);

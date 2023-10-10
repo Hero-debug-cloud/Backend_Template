@@ -1,6 +1,6 @@
 {
   "name": "@start_template/backend",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "this is the template backend folder for your project",
   "main": "index.js",
   "bin":"./bin/cli.js",
