@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const { exeSync } = require("child_process");
+const { execSync } = require("child_process");
 
 const runCommand = (command) => {
   try {
-    exeSync(`${command}`, { stdio: "inhert" });
+    execSync(`${command}`, { stdio: "inhert" });
   } catch (e) {
     console.error(`Failed to execute ${command}`, e);
     return false;
