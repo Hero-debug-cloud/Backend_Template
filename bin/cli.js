@@ -4,7 +4,7 @@ const { execSync } = require("child_process");
 
 const runCommand = (command) => {
   try {
-    execSync(`${command}`, { stdio: "inhert" });
+    execSync(`${command}`);
   } catch (e) {
     console.error(`Failed to execute ${command}`, e);
     return false;
